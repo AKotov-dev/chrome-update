@@ -1,0 +1,11 @@
+[Unit]
+Description=Chrome Update
+Wants=network-online.target nss-lookup.target
+After=network-online.target nss-lookup.target
+
+[Service]
+Type=simple
+ExecStart=/etc/chrome-update/chrome-update
+
+[Install]
+WantedBy=multi-user.target

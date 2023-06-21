@@ -1,0 +1,35 @@
+#!/bin/bash
+
+#Google Chrome Update Script
+
+#Обновление уже было?
+[ "$(cat /etc/chrome-update/date_stamp 2>/dev/null)" == "$(date '+%d-%m-%Y')" ] && exit 0
+
+#Есть, что обновлять?
+test -f /opt/google/chrome/google-chrome || exit 0
+
+# Задержка (сек)
+echo "5 min delay..."; sleep 300
+
+#Сеть доступна?
+echo "Checking the connection..."
+ERR=$(ping google.com -c 3 2>&1 > /dev/null) && echo "[ OK ]" || { echo "ERROR" && exit; }
+
+#Удаляем источник, чтобы при плановом обновлении не требовал --force
+if [ -n "$(grep chrome_x86_64 /etc/urpmi/urpmi.cfg)" ]; then
+    urpmi.removemedia chrome_x86_64
+fi
+
+urpmi.addmedia chrome_x86_64 http://dl.google.com/linux/chrome/rpm/stable/x86_64
+
+#Форсированная установка браузера
+urpmi --force google-chrome-stable
+
+#Удаляем источник, чтобы при плановом обновлении не требовал --force
+if [ -n "$(grep chrome_x86_64 /etc/urpmi/urpmi.cfg)" ]; then
+    urpmi.removemedia chrome_x86_64
+fi
+
+date '+%d-%m-%Y' > /etc/chrome-update/date_stamp
+
+exit 0;
