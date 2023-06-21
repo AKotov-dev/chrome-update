@@ -6,6 +6,6 @@ Checking for updates to the `google-chrome-stable` package is performed daily, b
 /etc/chrome-update/chrome-update
 /etc/systemd/system/chrome-update.service
 ```
-**Note:** The initial installation of the browser is done from the [developer's website](https://www.google.com/intl/ru_ru/chrome/).
+The initial installation of the browser is done from the [developer's website](https://www.google.com/intl/en_en/chrome/).
   
 Tested in Mageia-8/9.
