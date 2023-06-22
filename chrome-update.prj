@@ -2,7 +2,7 @@
 name=chrome-update
 
 [VERSION]
-version=0.1
+version=0.2
 
 [RELEASE]
 release=0.mrx9
@@ -26,7 +26,7 @@ vendor=alex_q_2000 (C) 2023
 summary=Google Chrome browser daily update
 
 [URLCOPY]
-urlcopy=111
+urlcopy=https://github.com/AKotov-dev/chrome-update
 
 [LICENSE]
 license=GPLv3
@@ -62,7 +62,7 @@ deb=0
 5=fi;
 
 [URL32]
-url32=111
+url32=https://github.com/AKotov-dev/chrome-update
 
 [PROGRAMNAME]
 programname=chrome-update
@@ -74,5 +74,9 @@ devtool=Shell
 toolversion=unknown
 
 [INFO]
-0=v0.1
-1=+ initial release
+0=v0.2
+1=+ Source connection status: /etc/chrome-update/date_stamp
+2=+ RPM packages for Mageia-8/9
+3=
+4=v0.1
+5=+ initial release
