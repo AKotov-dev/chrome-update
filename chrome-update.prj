@@ -12,9 +12,10 @@ group=Accessibility
 
 [DESCRIPTION]
 0=The update is performed 1 time a day 5 minutes after restarting the computer.
-1=Files:
+1=---
 2=/etc/chrome-update/chrome-update
-3=/etc/systemd/system/chrome-update.service
+3=/etc/chrome-update/date_stamp - log file
+4=/etc/systemd/system/chrome-update.service
 
 [MAINTAINER]
 maintainer=Alex Kotov
@@ -23,7 +24,7 @@ maintainer=Alex Kotov
 vendor=alex_q_2000 (C) 2023
 
 [SUMMARY]
-summary=Google Chrome browser daily update
+summary=Google Chrome daily update
 
 [URLCOPY]
 urlcopy=https://github.com/AKotov-dev/chrome-update
@@ -32,7 +33,7 @@ urlcopy=https://github.com/AKotov-dev/chrome-update
 license=GPLv3
 
 [DEPS]
-deps=curl urpmi
+deps=urpmi
 
 [META]
 meta=0

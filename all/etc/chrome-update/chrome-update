@@ -13,7 +13,9 @@ echo "5 min delay..."; sleep 300
 
 #Сеть доступна?
 echo "Checking the connection..."
-ERR=$(ping google.com -c 3 2>&1 > /dev/null) && echo "[ OK ]" || { echo "ERROR" && exit; }
+ERR=$(ping google.com -c 3 2>&1 > /dev/null) && echo "[ OK ]" || \
+{ echo "[ ERROR ]" && echo "$(date '+%d-%m-%Y') Internet connection: ERROR" > \
+/etc/chrome-update/date_stamp && exit; }
 
 #Удаляем источник, чтобы при плановом обновлении не требовал --force
 if [ -n "$(grep chrome_x86_64 /etc/urpmi/urpmi.cfg)" ]; then
@@ -27,7 +29,7 @@ urpmi.addmedia chrome_x86_64 http://dl.google.com/linux/chrome/rpm/stable/x86_64
 if [ "$?" -eq "0" ]; then
     date '+%d-%m-%Y' > /etc/chrome-update/date_stamp
 	else
-    echo "Connecting the repository: ERROR" > /etc/chrome-update/date_stamp
+    echo "$(date '+%d-%m-%Y') Connecting the repository: ERROR" > /etc/chrome-update/date_stamp
     exit 1
 fi
 
