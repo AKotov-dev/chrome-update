@@ -2,7 +2,7 @@
 name=chrome-update
 
 [VERSION]
-version=0.2
+version=0.3
 
 [RELEASE]
 release=0.mrx9
@@ -21,7 +21,7 @@ group=Accessibility
 maintainer=Alex Kotov
 
 [VENDOR]
-vendor=alex_q_2000 (C) 2023
+vendor=alex_q_2000 (C) 2024
 
 [SUMMARY]
 summary=Google Chrome daily update
@@ -75,9 +75,13 @@ devtool=Shell
 toolversion=unknown
 
 [INFO]
-0=v0.2
-1=+ Source connection status: /etc/chrome-update/date_stamp
+0=v0.3
+1=+ Dependency checking exception (urpmi --force --noscripts --allow-force google-chrome-stable)
 2=+ RPM packages for Mageia-8/9
 3=
-4=v0.1
-5=+ initial release
+4=v0.2
+5=+ Source connection status: /etc/chrome-update/date_stamp
+6=+ RPM packages for Mageia-8/9
+7=
+8=v0.1
+9=+ initial release

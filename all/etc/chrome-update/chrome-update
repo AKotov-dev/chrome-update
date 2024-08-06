@@ -34,7 +34,7 @@ if [ "$?" -eq "0" ]; then
 fi
 
 #Форсированная установка браузера
-urpmi --force google-chrome-stable
+urpmi --force --noscripts --allow-force google-chrome-stable
 
 #Удаляем источник, чтобы при плановом обновлении не требовал --force
 if [ -n "$(grep chrome_x86_64 /etc/urpmi/urpmi.cfg)" ]; then
