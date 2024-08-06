@@ -2,7 +2,7 @@
 name=chrome-update
 
 [VERSION]
-version=0.3
+version=0.4
 
 [RELEASE]
 release=0.mrx9
@@ -47,6 +47,7 @@ deb=0
 [FILES]
 0=/etc/chrome-update/chrome-update
 1=/etc/systemd/system/chrome-update.service
+2=/usr/share/doc/chrome-update/
 
 [AFTERINSTALL]
 0=#!/bin/bash
@@ -75,13 +76,17 @@ devtool=Shell
 toolversion=unknown
 
 [INFO]
-0=v0.3
-1=+ Dependency checking exception (urpmi --force --noscripts --allow-force google-chrome-stable)
+0=v0.4
+1=+ Launch on flash drive is excluded (live mode)
 2=+ RPM packages for Mageia-8/9
 3=
-4=v0.2
-5=+ Source connection status: /etc/chrome-update/date_stamp
+4=v0.3
+5=+ Dependency checking exception (urpmi --force --noscripts --allow-force google-chrome-stable)
 6=+ RPM packages for Mageia-8/9
 7=
-8=v0.1
-9=+ initial release
+8=v0.2
+9=+ Source connection status: /etc/chrome-update/date_stamp
+10=+ RPM packages for Mageia-8/9
+11=
+12=v0.1
+13=+ initial release

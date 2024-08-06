@@ -2,6 +2,9 @@
 
 #Google Chrome Update Script
 
+#На флешке не запускать
+[ -d /run/mgalive/ovlsize ] && exit 0
+
 #Обновление уже было?
 [ "$(cat /etc/chrome-update/date_stamp 2>/dev/null)" == "$(date '+%d-%m-%Y')" ] && exit 0
 
